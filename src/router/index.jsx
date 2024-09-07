@@ -1,24 +1,29 @@
 import { createBrowserRouter, Navigate } from "react-router-dom";
 import ProtectedRoute from "@/layout/ProtectedRoute";
 import PublicRoute from "@/layout/PublicRoute";
+import React from 'react';
+import HomePublic from "@/components/home/HomePublic";
 
 
 const router = createBrowserRouter([
   {
-
     element: <PublicRoute />,
     children: [
-       {
-        path: '/',
-        element: <Navigate to='/homePublic' />
-      },  
       {
-        path: '/login',
-        element: <Login />
+        path: '/',
+        element: <Navigate to='/homepublic' />
+      },
+      {
+        path: "/homepublic",
+        element: <HomePublic />,
       },
       {
         path: "/register",
-        element: <SignUp />
+        element: {/* <Register /> */}
+      },
+      {
+        path: "/login",
+        element: {/* <Login /> */}
       },
     ],
   },
@@ -26,19 +31,15 @@ const router = createBrowserRouter([
     element: <ProtectedRoute />,
     children: [
       {
-        path: "/home",
+        path: '/home',
         element:  {/* <HomePrivate /> */}
       },
       {
-        path: "/settings",
+        path: '/settings',
         element: {/* <Settings /> */}
       },
-      
-      
     ],
   }
-
-
 ]);
 
 export default router

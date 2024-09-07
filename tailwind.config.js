@@ -1,3 +1,5 @@
+const tailwindcssAnimate = require('tailwindcss-animate');
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ['class'], 
@@ -12,9 +14,9 @@ module.exports = {
       colors: {
         background: 'hsl(var(--background))',   
         foreground: 'hsl(var(--foreground))',   
-        border: 'hsl(var(--border))',           
-        primary: "",  
-        secondary: "", 
+        border: 'hsl(var(--border))',    
+        primary: "#013D5A",  
+        secondary: "#FC3E3", 
         black: "#000000",
         white: "#FFFFFF",
       },
@@ -39,5 +41,7 @@ module.exports = {
       },
     },
   },
-  plugins: [require('tailwindcss-animate')],
+  plugins:  [
+    require('tailwindcss-animate'), 
+  ],
 }
