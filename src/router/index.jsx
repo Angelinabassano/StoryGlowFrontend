@@ -31,8 +31,8 @@ const router = createBrowserRouter([
     element: <ProtectedRoute />,
     children: [
       {
-        path: '/home',
-        element:  {/* <HomePrivate /> */}
+        path: '/homeprotected',
+        element:  <ssd/>
       },
       {
         path: '/settings',
