@@ -1,3 +1,4 @@
+import NavbarProtected from '@/components/navbar/NavbarProtected';
 import { Navigate, Outlet } from 'react-router-dom'
 
 
@@ -5,7 +6,7 @@ const ProtectedRoute = () => {
 
   return (
     <>
-      {/* Navbar 1*/}
+      <NavbarProtected/>
       <Outlet />
       {/* Footer 1*/}
     </>
