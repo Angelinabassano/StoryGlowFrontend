@@ -10,9 +10,8 @@ const NavbarPublic = () => {
   };
 
   return (
-    <nav className="bg-secondary border border-gray-200 dark:border-gray-700 px-2 sm:px-4 py-2.5 shadow w-full">
+    <nav className="bg-secondary border-b border-gray-200 dark:border-gray-700 px-2 sm:px-4 py-2.5 shadow w-full">
       <div className="container flex flex-wrap justify-between items-center mx-auto w-full">
-        
         <Link to="/homepublic" className="flex items-center">
           <img 
             src={LogoLargo} 

@@ -16,7 +16,7 @@ const NavbarProtected = () => {
   };
 
   return (
-    <nav className="bg-secondary border border-gray-200 dark:border-gray-700 px-2 sm:px-4 py-2.5 shadow w-full relative">
+    <nav className="bg-secondary border-b border-gray-200 dark:border-gray-700 px-2 sm:px-4 py-2.5 shadow w-full">
       <div className="container mx-auto flex flex-wrap justify-between items-center w-full">
         
         <Link to="/homepublic" className="flex items-center">
