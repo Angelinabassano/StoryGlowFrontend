@@ -1,4 +1,3 @@
-import LogoCompleto from '@/components/logo/Logo';
 import NavbarPublic from '@/components/navbar/NavbarPublic';
 import { Outlet } from 'react-router-dom';
 
@@ -7,7 +6,7 @@ const PublicRoute = () => {
     <>
       <NavbarPublic/>
       <Outlet />
-      <LogoCompleto></LogoCompleto>
+      {/*footer*/}
     </>
   );
 };

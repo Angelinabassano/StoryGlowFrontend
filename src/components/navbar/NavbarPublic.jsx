@@ -53,7 +53,7 @@ const NavbarPublic = () => {
             <li className="w-full md:w-auto">
               <Link
                 to="/login"
-                className="block py-2 px-4 text-primary text-base w-full text-center hover:bg-[#BDD3CE] rounded focus:outline-none dark:text-primary dark:hover:bg-primary-dark"
+                className="block py-2 px-4 text-primary text-base w-full text-center font-bold hover:bg-[#BDD3CE] rounded focus:outline-none dark:text-primary dark:hover:bg-primary-dark"
                 aria-current="Login page"
               >
                 Log in
@@ -62,7 +62,7 @@ const NavbarPublic = () => {
             <li className="w-full md:w-auto">
               <Link
                 to="/signup"
-                className="block py-2 px-4 text-primary text-base w-full text-center hover:bg-[#BDD3CE] rounded focus:outline-none dark:text-primary dark:hover:bg-primary-dark"
+                className="block py-2 px-4 text-primary text-base w-full text-center font-bold hover:bg-[#BDD3CE] rounded focus:outline-none dark:text-primary dark:hover:bg-primary-dark"
               >
                 Sign up
               </Link>
