@@ -2,7 +2,8 @@ import { createBrowserRouter, Navigate } from "react-router-dom";
 import ProtectedRoute from "@/layout/ProtectedRoute";
 import PublicRoute from "@/layout/PublicRoute";
 import React from 'react';
-import HomePublic from "@/components/home/HomePublic";
+import HomePublic from "@/pages/home/HomePublic";
+import HomeProtected from "@/pages/home/HomeProtected";
 
 
 const router = createBrowserRouter([
@@ -32,7 +33,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/homeprotected',
-        element:  <ssd/>
+        element:  <HomeProtected/>
       },
       {
         path: '/settings',
