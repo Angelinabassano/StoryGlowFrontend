@@ -6,7 +6,7 @@ const PublicRoute = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <NavbarPublic />
-      <main className="flex-grow flex items-center justify-center px-4">
+      <main>
         <Outlet />
       </main>
       <Footer />
