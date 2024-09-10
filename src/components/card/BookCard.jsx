@@ -1,12 +1,15 @@
 import React from "react";
 
-const BookCard = () => {
+const BookCard = ({ title, image, onClick }) => {
   return (
-    <div className="relative flex w-full max-w-[13rem] flex-col rounded-lg bg-white shadow-lg overflow-hidden">
+    <div
+      onClick={onClick}
+      className="relative flex w-full max-w-[13rem] flex-col rounded-lg bg-white shadow-lg overflow-hidden cursor-pointer"
+    >
       <div className="relative h-64">
         <img
-          src="https://picsum.photos/200/300"
-          alt="Picture"
+          src={image}
+          alt={title}
           className="h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
@@ -14,7 +17,7 @@ const BookCard = () => {
 
       <div className="p-4 bg-secondary">
         <h5 className="text-xl font-semibold text-primary">
-          Title
+          {title}
         </h5>
       </div>
     </div>

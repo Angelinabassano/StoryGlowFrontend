@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import BookCard from '@/components/card/BookCard';
 
 const HomeProtected = () => {
   const [category, setCategory] = useState('Choose an option');
   const [showCategoryMenu, setShowCategoryMenu] = useState(false);
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
   const categories = ['Fiction', 'Romance', 'Thriller'];
 
@@ -15,11 +15,36 @@ const HomeProtected = () => {
   };
 
   const books = [
-    { id: 1, title: 'Book Title 1', image: 'https://via.placeholder.com/150?text=Book+1' },
-    { id: 2, title: 'Book Title 2', image: 'https://via.placeholder.com/150?text=Book+2' },
-    { id: 3, title: 'Book Title 3', image: 'https://via.placeholder.com/150?text=Book+3' },
-    { id: 4, title: 'Book Title 4', image: 'https://via.placeholder.com/150?text=Book+4' },
-    { id: 5, title: 'Book Title 5', image: 'https://via.placeholder.com/150?text=Book+5' },
+    {
+      id: 1,
+      title: 'The Great Gatsby',
+      image: 'https://picsum.photos/200/300?book=1',
+      description: 'A novel by F. Scott Fitzgerald about the American dream.'
+    },
+    {
+      id: 2,
+      title: 'To Kill a Mockingbird',
+      image: 'https://picsum.photos/200/300?book=2',
+      description: 'Harper Lee’s Pulitzer Prize-winning novel about racial injustice.'
+    },
+    {
+      id: 3,
+      title: '1984',
+      image: 'https://picsum.photos/200/300?book=3',
+      description: 'George Orwell’s dystopian novel about totalitarianism.'
+    },
+    {
+      id: 4,
+      title: 'Pride and Prejudice',
+      image: 'https://picsum.photos/200/300?book=4',
+      description: 'Jane Austen’s classic novel of manners and marriage in 19th century England.'
+    },
+    {
+      id: 5,
+      title: 'The Catcher in the Rye',
+      image: 'https://picsum.photos/200/300?book=5',
+      description: 'J.D. Salinger’s novel about teenage angst and alienation.'
+    },
   ];
 
   return (
@@ -47,9 +72,8 @@ const HomeProtected = () => {
           </svg>
         </button>
 
-
         {showCategoryMenu && (
-          <div 
+          <div
             id="category-menu"
             role="listbox"
             aria-activedescendant={category}
@@ -63,7 +87,7 @@ const HomeProtected = () => {
                   role="option"
                   aria-selected={category === 'Choose an option'}
                 >
-                  Choose an option
+                  Chooses Genres
                 </button>
               </li>
               {categories.map((cat) => (
@@ -83,9 +107,7 @@ const HomeProtected = () => {
         )}
 
         <button
-          onClick={() => {
-            // navigate('/addbook');
-          }}
+          onClick={() => navigate('/addbook')}
           className="flex items-center bg-white border border-primary rounded-full px-4 py-2 shadow-md focus:outline-none focus:ring-2 focus:ring-primary"
         >
           <span className="mr-2">Add Book</span>
@@ -111,6 +133,7 @@ const HomeProtected = () => {
               key={book.id}
               title={book.title}
               image={book.image}
+              onClick={() => navigate(`/viewbook/${book.id}`)} // Redirige al hacer clic
             />
           ))}
         </div>

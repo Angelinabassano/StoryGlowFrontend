@@ -4,7 +4,7 @@ import PublicRoute from "@/layout/PublicRoute";
 import React from 'react';
 import HomePublic from "@/pages/home/HomePublic";
 import HomeProtected from "@/pages/home/HomeProtected";
-
+import ViewBook from "@/pages/home/viewBook/ViewBook";
 
 const router = createBrowserRouter([
   {
@@ -36,11 +36,11 @@ const router = createBrowserRouter([
         element:  <HomeProtected/>
       },
       {
-        path: '/settings',
-        element: {/* <Settings /> */}
+        path: '/viewbook/:id', 
+        element: <ViewBook/>
       },
     ],
   }
 ]);
 
-export default router
+export default router;
