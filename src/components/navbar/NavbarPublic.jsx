@@ -51,7 +51,7 @@ const NavbarPublic = () => {
           <ul className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-base md:font-medium justify-center items-center">
             <li className="w-full md:w-auto">
               <Link
-                to="/login"
+                to="/homeprotected"
                 className="block py-2 px-4 text-primary text-base w-full text-center font-bold hover:bg-[#BDD3CE] rounded focus:outline-none dark:text-primary dark:hover:bg-primary-dark"
                 aria-current="Login page"
               >

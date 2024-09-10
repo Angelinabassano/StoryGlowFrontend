@@ -5,6 +5,7 @@ import React from 'react';
 import HomePublic from "@/pages/home/HomePublic";
 import HomeProtected from "@/pages/home/HomeProtected";
 import ViewBook from "@/pages/home/viewBook/ViewBook";
+import CreateBook from "@/pages/createbook/CreateBook";
 
 const router = createBrowserRouter([
   {
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
       {
         path: '/viewbook/:id', 
         element: <ViewBook/>
+      },
+      {
+        path: '/createbook', 
+        element: <CreateBook/>
       },
     ],
   }

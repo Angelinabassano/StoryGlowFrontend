@@ -107,7 +107,7 @@ const HomeProtected = () => {
         )}
 
         <button
-          onClick={() => navigate('/addbook')}
+          onClick={() => navigate('/createbook')}
           className="flex items-center bg-white border border-primary rounded-full px-4 py-2 shadow-md focus:outline-none focus:ring-2 focus:ring-primary"
         >
           <span className="mr-2">Add Book</span>
@@ -133,7 +133,7 @@ const HomeProtected = () => {
               key={book.id}
               title={book.title}
               image={book.image}
-              onClick={() => navigate(`/viewbook/${book.id}`)} // Redirige al hacer clic
+              onClick={() => navigate(`/viewbook/${book.id}`)} 
             />
           ))}
         </div>
