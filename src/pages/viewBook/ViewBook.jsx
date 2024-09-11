@@ -23,11 +23,15 @@ const ViewBook = () => {
   const deleteBook = async () => {
     try {
       await axios.delete(`http://127.0.0.1:8000/api/v1/books/delete/${id}/`);
-      navigate('/homeprotected'); 
+      navigate('/homeprotected');
     } catch (error) {
       console.error('Error deleting book:', error);
       alert('Error deleting book');
     }
+  };
+
+  const handleUpdateClick = () => {
+    navigate(`/updatebook/${id}`);
   };
 
   if (!book) {
@@ -38,6 +42,25 @@ const ViewBook = () => {
 
   return (
     <div className="relative mx-auto bg-white text-black shadow-lg rounded-lg overflow-hidden border border-gray-300 max-w-full lg:max-w-4xl">
+      <button
+        onClick={handleUpdateClick}
+        className="absolute top-4 right-16 bg-primary text-white p-1 rounded-full"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="M17 3l4 4m0 0l-8 8-4 1 1-4 8-8zm0 0L7 13"
+          />
+        </svg>
+      </button>
       <button
         onClick={deleteBook}
         className="absolute top-4 right-4 bg-primary text-white p-1 rounded-full"

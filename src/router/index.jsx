@@ -6,6 +6,7 @@ import HomePublic from "@/pages/home/HomePublic";
 import HomeProtected from "@/pages/home/HomeProtected";
 import ViewBook from "@/pages/viewBook/ViewBook";
 import CreateBook from "@/pages/createbook/CreateBook";
+import UpdateBook from "@/pages/updateBook/UpdateBook";
 
 const router = createBrowserRouter([
   {
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
       {
         path: '/createbook', 
         element: <CreateBook/>
+      },
+      {
+        path: '/updatebook/:id', 
+        element: <UpdateBook/>
       },
     ],
   }
