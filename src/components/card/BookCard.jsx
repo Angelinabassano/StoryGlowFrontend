@@ -1,6 +1,8 @@
 import React from "react";
 
 const BookCard = ({ title, image, onClick }) => {
+  console.log('Image URL:', image); 
+
   return (
     <div
       onClick={onClick}
@@ -12,11 +14,11 @@ const BookCard = ({ title, image, onClick }) => {
           alt={title}
           className="h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-50"></div>
       </div>
 
       <div className="p-4 bg-secondary">
-        <h5 className="text-xl font-semibold text-primary">
+        <h5 className="text-xl font-semibold text-primary truncate">
           {title}
         </h5>
       </div>

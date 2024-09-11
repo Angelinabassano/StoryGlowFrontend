@@ -1,51 +1,31 @@
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import BookCard from '@/components/card/BookCard';
 
 const HomeProtected = () => {
   const [category, setCategory] = useState('Choose an option');
   const [showCategoryMenu, setShowCategoryMenu] = useState(false);
+  const [books, setBooks] = useState([]);
   const navigate = useNavigate();
 
-  const categories = ['Fiction', 'Romance', 'Thriller'];
+  useEffect(() => {
+    const fetchBooks = async () => {
+      try {
+        const response = await axios.get('http://127.0.0.1:8000/api/v1/books/list/');
+        setBooks(response.data);
+      } catch {
+        setBooks([]);
+      }
+    };
+
+    fetchBooks();
+  }, []);
 
   const handleCategoryChange = (newCategory) => {
     setCategory(newCategory);
     setShowCategoryMenu(false);
   };
-
-  const books = [
-    {
-      id: 1,
-      title: 'The Great Gatsby',
-      image: 'https://picsum.photos/200/300?book=1',
-      description: 'A novel by F. Scott Fitzgerald about the American dream.'
-    },
-    {
-      id: 2,
-      title: 'To Kill a Mockingbird',
-      image: 'https://picsum.photos/200/300?book=2',
-      description: 'Harper Lee’s Pulitzer Prize-winning novel about racial injustice.'
-    },
-    {
-      id: 3,
-      title: '1984',
-      image: 'https://picsum.photos/200/300?book=3',
-      description: 'George Orwell’s dystopian novel about totalitarianism.'
-    },
-    {
-      id: 4,
-      title: 'Pride and Prejudice',
-      image: 'https://picsum.photos/200/300?book=4',
-      description: 'Jane Austen’s classic novel of manners and marriage in 19th century England.'
-    },
-    {
-      id: 5,
-      title: 'The Catcher in the Rye',
-      image: 'https://picsum.photos/200/300?book=5',
-      description: 'J.D. Salinger’s novel about teenage angst and alienation.'
-    },
-  ];
 
   return (
     <div className="relative w-full">
@@ -87,10 +67,11 @@ const HomeProtected = () => {
                   role="option"
                   aria-selected={category === 'Choose an option'}
                 >
-                  Chooses Genres
+                  Choose Genres
                 </button>
               </li>
-              {categories.map((cat) => (
+              
+              {category.map((cat) => (
                 <li key={cat}>
                   <button
                     onClick={() => handleCategoryChange(cat)}
@@ -128,14 +109,18 @@ const HomeProtected = () => {
 
       <div className="w-full overflow-x-auto py-4 px-4">
         <div className="grid grid-cols-3 md:grid-cols-5 gap-4">
-          {books.map((book) => (
-            <BookCard
-              key={book.id}
-              title={book.title}
-              image={book.image}
-              onClick={() => navigate(`/viewbook/${book.id}`)} 
-            />
-          ))}
+          {books.map((book) => {
+            const imageUrl = book.cover_photo || '';
+
+            return (
+              <BookCard
+                key={book.id}
+                title={book.title}
+                image={imageUrl}
+                onClick={() => navigate(`/viewbook/${book.id}`)}
+              />
+            );
+          })}
         </div>
       </div>
     </div>
