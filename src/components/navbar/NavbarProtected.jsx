@@ -1,18 +1,12 @@
-import React, { useState } from 'react'; 
-import { Link } from 'react-router-dom'; 
-import LogoLargo from '@/assets/logo/LogoLargo.svg'; 
-import SearchIcon from '../atom/searh/Search';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import LogoLargo from '@/assets/logo/LogoLargo.svg';
 
 const NavbarProtected = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
-  };
-
-  const toggleSearch = () => {
-    setIsSearchOpen(!isSearchOpen);
   };
 
   return (
@@ -28,28 +22,6 @@ const NavbarProtected = () => {
         </Link>
 
         <div className="flex items-center md:ml-auto">
-        
-          <button
-            onClick={toggleSearch} 
-            aria-label="Toggle Search"
-            className="mr-4 text-primary"
-          >
-            <SearchIcon className="h-6 w-6 text-primary" /> 
-          </button>
-
-          {isSearchOpen && (
-            <div className="relative flex items-center w-full md:w-auto">
-              <input
-                id="search-input"
-                className="h-8 pl-2 pr-2 rounded-lg text-sm focus:outline-none text-primary w-20 sm:w-20 lg:w-20" 
-                type="search"
-                name="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-            </div>
-          )}
-
           <div className="md:hidden ml-2">
             <button
               id="menu-toggle"
