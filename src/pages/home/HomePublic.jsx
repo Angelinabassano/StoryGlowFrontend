@@ -1,6 +1,6 @@
 import Carousel from '@/components/carousel/Carousel';
 import React from 'react';
-import Mockups from '@/assets/home/Mockups.png'; 
+import Mockup from '@/assets/home/Mockup.jpg'; 
 
 const HomePublic = () => {
   return (
@@ -20,8 +20,8 @@ const HomePublic = () => {
 
         <div className="md:w-1/2 flex justify-center items-center mt-12">
           <img
-            src={Mockups}
-            alt="Mockups"
+            src={Mockup}
+            alt="Mockup"
             className="w-full h-auto md:w-3/4 md:h-auto object-cover"
           />
         </div>
