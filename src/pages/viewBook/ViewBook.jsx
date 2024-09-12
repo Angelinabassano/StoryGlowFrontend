@@ -34,6 +34,10 @@ const ViewBook = () => {
     navigate(`/updatebook/${id}`);
   };
 
+  const goToHome = () => {
+    navigate('/homeprotected');
+  };
+
   if (!book) {
     return null;
   }
@@ -42,6 +46,26 @@ const ViewBook = () => {
 
   return (
     <div className="relative mx-auto bg-white text-black shadow-lg rounded-lg overflow-hidden border border-gray-300 max-w-full lg:max-w-4xl">
+      <button
+        onClick={goToHome}
+        className="absolute top-4 left-4 bg-primary text-white p-1 rounded-full"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="M15 19l-7-7 7-7"
+          />
+        </svg>
+      </button>
+
       <button
         onClick={handleUpdateClick}
         className="absolute top-4 right-16 bg-primary text-white p-1 rounded-full"
@@ -61,6 +85,7 @@ const ViewBook = () => {
           />
         </svg>
       </button>
+      
       <button
         onClick={deleteBook}
         className="absolute top-4 right-4 bg-primary text-white p-1 rounded-full"
