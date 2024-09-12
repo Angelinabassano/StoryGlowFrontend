@@ -36,7 +36,6 @@ const HomeProtected = () => {
   return (
     <div className="relative w-full">
       <div className="flex flex-wrap items-center space-x-2 md:space-x-4 mt-4 ml-4">
-        {/* Category Button */}
         <button
           onClick={() => setShowCategoryMenu(!showCategoryMenu)}
           aria-haspopup="listbox"
@@ -94,7 +93,6 @@ const HomeProtected = () => {
           </div>
         )}
 
-        {/* Search Input */}
         <div className="relative flex items-center w-32 md:w-64">
           <input
             type="text"
@@ -106,7 +104,6 @@ const HomeProtected = () => {
           <SearchIcon className="absolute left-2 top-1/2 transform -translate-y-1/2 h-4 w-4 text-primary md:h-5 md:w-5" />
         </div>
 
-        {/* Add Book Button */}
         <button
           onClick={() => navigate('/createbook')}
           className="flex items-center bg-secondary border border-primary rounded-full px-4 py-2 shadow-md focus:outline-none focus:ring-2 focus:ring-primary text-xs md:text-sm h-10 md:h-12 w-32"

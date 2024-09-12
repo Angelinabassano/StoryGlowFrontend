@@ -17,7 +17,7 @@ const BookCard = ({ title, image, onClick }) => {
         <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-50"></div>
       </div>
 
-      <div className="p-4 bg-secondary">
+      <div className="p-4 bg-white">
         <h5 className="text-xl font-semibold text-primary truncate">
           {title}
         </h5>
