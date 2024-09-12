@@ -53,10 +53,33 @@ const UpdateBook = () => {
     }
   };
 
+  const goToHome = () => {
+    navigate('/homeprotected');
+  };
+
   return (
-    <div className="flex justify-center items-center min-h-screen p-4 bg-white">
-      <div className="bg-white shadow-lg rounded-lg p-6 w-full max-w-4xl flex flex-col lg:flex-row lg:space-x-6">
-        
+    <div className="relative mx-auto bg-white text-black shadow-lg rounded-lg overflow-hidden border border-gray-300 max-w-full lg:max-w-4xl p-8">
+      <button
+        onClick={goToHome}
+        className="absolute top-4 left-4 bg-primary text-white p-2 rounded-full"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="M15 19l-7-7 7-7"
+          />
+        </svg>
+      </button>
+      
+      <div className="flex flex-col lg:flex-row lg:space-x-6 pt-12">
         <div className="w-full lg:w-1/3 mb-4 lg:mb-0">
           <label className="cursor-pointer w-full h-80 flex items-center justify-center border-2 border-dashed border-gray-300 rounded-lg overflow-hidden relative bg-gray-100">
             {imagePreview ? (

@@ -2,7 +2,7 @@ const tailwindcssAnimate = require('tailwindcss-animate');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: ['class'], 
+  darkMode: ['class'],
   content: [
     './src/**/*.{js,jsx,ts,tsx}', 
     './pages/**/*.{js,jsx,ts,tsx}',
@@ -12,11 +12,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        background: 'hsl(var(--background))',   
-        foreground: 'hsl(var(--foreground))',   
-        border: 'hsl(var(--border))',    
-        primary: "#013D5A",  
-        secondary: "#FCF3E3", 
+        background: 'hsl(var(--background))',
+        foreground: 'hsl(var(--foreground))',
+        border: 'hsl(var(--border))',
+        primary: "#013D5A",
+        secondary: "#FCF3E3",
         black: "#000000",
         white: "#FFFFFF",
       },
@@ -39,9 +39,12 @@ module.exports = {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
       },
+      fontFamily: {
+        'cagliostro': ['Cagliostro', 'sans-serif'], 
+      },
     },
   },
-  plugins:  [
-    require('tailwindcss-animate'), 
+  plugins: [
+    tailwindcssAnimate,
   ],
-}
+};
